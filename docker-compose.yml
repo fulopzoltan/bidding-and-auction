@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  auction:
+    build:
+      context: .
+      dockerfile: Dockerfile.auction
+    ports:
+      - "8080:8080"
+    restart: always
+
+  bidding:
+    build:
+      context: .
+      dockerfile: Dockerfile.bidding
+    ports:
+      - "8081:8081"
+    restart: always
+
+  bidding-2:
+    build:
+      context: .
+      dockerfile: Dockerfile.bidding2
+    ports:
+      - "8082:8082"
+    restart: always
+
+  bidding-3:
+      build:
+        context: .
+        dockerfile: Dockerfile.bidding3
+      ports:
+        - "8083:8083"
+      restart: always

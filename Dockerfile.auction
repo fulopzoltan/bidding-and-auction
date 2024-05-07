@@ -1,0 +1,29 @@
+# Stage 1: Build the Go binary
+FROM golang:1.22-alpine AS builder
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy only the necessary Go source code into the container
+
+COPY ./auction .
+
+COPY go.mod go.sum ./
+
+# Build the Go binary
+RUN go build -o auction-service ./main.go
+
+# Stage 2: Create a lightweight container with the binary
+FROM alpine:latest
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the binary from the previous stage
+COPY --from=builder /app/auction-service .
+
+# Expose the port that the service listens on
+EXPOSE 8080
+
+# Command to run the executable
+CMD ["./auction-service"]
