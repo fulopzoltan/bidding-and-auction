@@ -18,5 +18,5 @@ To install and set up the project, follow these steps:
 - Run the following command to make a request to the local server: 
  `curl http://localhost:8080/auction`
 
-  
-  
+## Test
+- For running the test you need to run the following command in the: `make test`
