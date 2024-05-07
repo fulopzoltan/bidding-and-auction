@@ -10,7 +10,7 @@ COPY ./bidding .
 COPY go.mod go.sum ./
 
 # Build the Go binary
-RUN go build -o bidding-service-2 ./main.go
+RUN go build -o bidding-service-2 .
 
 # Stage 2: Create a lightweight container with the binary
 FROM alpine:latest

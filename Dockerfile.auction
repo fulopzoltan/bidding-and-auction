@@ -11,7 +11,7 @@ COPY ./auction .
 COPY go.mod go.sum ./
 
 # Build the Go binary
-RUN go build -o auction-service ./main.go
+RUN go build -o auction-service .
 
 # Stage 2: Create a lightweight container with the binary
 FROM alpine:latest
