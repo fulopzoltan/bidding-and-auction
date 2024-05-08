@@ -20,15 +20,15 @@ services:
   bidding-2:
     build:
       context: .
-      dockerfile: Dockerfile.bidding2
+      dockerfile: Dockerfile.bidding
     ports:
-      - "8082:8082"
+      - "8082:8081"
     restart: always
 
   bidding-3:
       build:
         context: .
-        dockerfile: Dockerfile.bidding3
+        dockerfile: Dockerfile.bidding
       ports:
-        - "8083:8083"
+        - "8083:8081"
       restart: always
